@@ -1,0 +1,12 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+ <package name="default" extends="struts-default">
+   <action name="buscar" class="curso.java.struts.action.BuscarAlumnoAction">
+     <result name="success">/alumno.jsp</result>
+     <result name="error">/error.jsp</result>
+   </action>
+   <action name="registrar" class="curso.java.struts.action.RegistrarAlumnoAction">
+     <result name="success">/alumno.jsp</result>
+   </action>
+ </package>
+</struts>
