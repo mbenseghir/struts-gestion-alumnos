@@ -1,0 +1,1 @@
+<h2>No se encontró el alumno</h2><a href='index.jsp'>Volver</a>
