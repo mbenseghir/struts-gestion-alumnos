@@ -11,6 +11,8 @@
 
     <package name="default" namespace="/" extends="struts-default">
 
+        <default-action-ref name="index" />
+
         <!-- Página principal (DNI) -->
         <action name="index" class="org.demo.actions.Index">
             <result name="success">welcome.jsp</result>

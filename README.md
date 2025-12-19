@@ -41,24 +41,31 @@ La aplicación consta de las siguientes funcionalidades:
 
 ## Estructura del proyecto
 
+```
 src
 └── main
-├── java
-│ └── org.demo.actions
-│ ├── Index.java
-│ ├── RegistryAction.java
-│ └── AlumnoAction.java
-│ └── beans
-│ └── AlumnoBean.java
-├── resources
-│ ├── struts.xml
-│ └── org/demo
-│ ├── package.properties
-│ └── package_es.properties
-└── webapp
-├── index.jsp
-├── registryForm.jsp
-└── welcome.jsp
+    ├── java
+    │   └── org.demo.actions
+    │       ├── Index.java
+    │       ├── RegistryAction.java
+    │       ├── AlumnoAction.java
+    │       └── beans
+    │           └── AlumnoBean.java
+    ├── resources
+    │   ├── struts.xml
+    │   └── org/demo
+    │       ├── package.properties
+    │       └── package_es.properties
+    └── webapp
+        ├── index.jsp
+        ├── registryForm.jsp
+        ├── welcome.jsp
+        ├── error.jsp
+        ├── registrar.jsp
+        └── alumno.jsp
+```
+
+Nota: Los archivos en `curso/java/struts/` son código alternativo no utilizado en la aplicación principal.
 
 
 ---
@@ -68,9 +75,10 @@ src
 Para ejecutar la aplicación en local:
 
 ```bash
-mvn jetty:run
+MAVEN_OPTS="-Xmx1g" mvn jetty:run
+```
 
-
+La aplicación estará disponible en `http://localhost:8080`.
 
 ## Notas
 

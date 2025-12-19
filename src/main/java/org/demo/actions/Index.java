@@ -1,17 +1,12 @@
 package org.demo.actions;
 
-import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
-import org.apache.struts2.convention.annotation.Result;
-import org.apache.struts2.convention.annotation.Results;
+import org.demo.actions.beans.AlumnoBean;
 
-@Results({
-    @Result(name = Action.SUCCESS, location = "welcome.jsp"),
-    @Result(name = Action.INPUT, location = "index.jsp")
-})
 public class Index extends ActionSupport {
 
     private String dni;
+    private AlumnoBean alumno;
 
     @Override
     public String execute() {
@@ -27,7 +22,14 @@ public class Index extends ActionSupport {
             return INPUT;
         }
 
-        // Aquí se podría buscar el alumno en memoria
+        // Buscar el alumno en memoria
+        for (AlumnoBean a : RegistryAction.getAlumnos()) {
+            if (a.getDni().equals(dni)) {
+                this.alumno = a;
+                break;
+            }
+        }
+
         return SUCCESS;
     }
 
@@ -38,5 +40,13 @@ public class Index extends ActionSupport {
 
     public void setDni(String dni) {
         this.dni = dni;
+    }
+
+    public AlumnoBean getAlumno() {
+        return alumno;
+    }
+
+    public void setAlumno(AlumnoBean alumno) {
+        this.alumno = alumno;
     }
 }
